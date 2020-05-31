@@ -25,7 +25,7 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<h1 class="text-2xl">{post.title}</h1>
 
 <div class="content">
   {@html post.html}

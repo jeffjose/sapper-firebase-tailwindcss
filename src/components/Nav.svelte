@@ -7,7 +7,7 @@
 </style>
 
 <nav>
-  <ul>
+  <ul class="h-20 flex items-center justify-evenly">
     <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
         home
