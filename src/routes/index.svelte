@@ -1,11 +1,33 @@
+<script context="module">
+  import { firestore } from "../firebase";
+  export async function preload(page, session) {
+    let db = await firestore();
+    let fbList = await db.collection("list").get();
+    return { list: fbList.docs };
+  }
+</script>
+
+<script>
+  export let list = [];
+</script>
+
 <style>
 
 </style>
 
 <svelte:head>
-  <title>sapper-sveltefire-tailwindcss project template</title>
+  <title>sapper-firebase-tailwindcss project template</title>
 </svelte:head>
 
-<h1 class="text-2xl text-center">
-  Welcome to sapper-sveltefire-tailwindcss project template
-</h1>
+<div class="container mx-auto">
+  <h1 class="text-2xl text-center mb-5">
+    Welcome to sapper-firebase-tailwindcss project template
+  </h1>
+
+  <h2 class="text-xl text-center">Firestore data</h2>
+  {#each list as listItem}
+    <p class="text-center">{JSON.stringify(listItem.data().name)}</p>
+  {:else}
+    <p class="text-center">Firestore is empty.</p>
+  {/each}
+</div>
