@@ -7,9 +7,7 @@
 </script>
 
 <script>
-  import { collectionStore } from "../stores/collection";
-
-  export let list = [];
+  import { publicStore, privilagedStore } from "../stores/collection";
 </script>
 
 <style>
@@ -25,10 +23,18 @@
     Welcome to sapper-firebase-tailwindcss project template
   </h1>
 
-  <h2 class="text-xl text-center">Firestore data</h2>
-  <p>{JSON.stringify($collectionStore)}</p>
-  {#each list as listItem}
-    <p class="text-center">{JSON.stringify(listItem.data().name)}</p>
+  <h2 class="text-xl text-center text-blue-500">Firestore data (Public)</h2>
+  {#each $publicStore as doc}
+    <p class="text-center">{JSON.stringify(doc)}</p>
+  {:else}
+    <p class="text-center">Firestore is empty.</p>
+  {/each}
+
+  <h2 class="mt-5 text-xl text-center text-red-500">
+    Firestore data (Privilaged)
+  </h2>
+  {#each $privilagedStore as doc}
+    <p class="text-center">{JSON.stringify(doc)}</p>
   {:else}
     <p class="text-center">Firestore is empty.</p>
   {/each}
