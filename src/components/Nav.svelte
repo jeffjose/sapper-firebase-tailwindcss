@@ -1,5 +1,6 @@
 <script>
   export let segment;
+  import Login from "../components/Login.svelte";
 </script>
 
 <style>
@@ -28,6 +29,11 @@
         href="blog">
         blog
       </a>
+    </li>
+    <li>
+      <span>
+        <Login />
+      </span>
     </li>
   </ul>
 </nav>
