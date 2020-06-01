@@ -1,5 +1,4 @@
-// Your web app's Firebase configuration
-export const firebaseConfig = {
+export const config = {
   apiKey: "AIzaSyB8mfJK2jvEI82Zq_CGawehWdrFmYkfn0g",
   authDomain: "sapper-sveltefire-tailwindcss.firebaseapp.com",
   databaseURL: "https://sapper-sveltefire-tailwindcss.firebaseio.com",

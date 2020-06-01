@@ -1,13 +1,14 @@
 <script context="module">
-  import { firestore } from "../firebase";
   export async function preload(page, session) {
-    let db = await firestore();
-    let fbList = await db.collection("list").get();
-    return { list: fbList.docs };
+    //let db = await firestore();
+    //let fbList = await db.collection("list").get();
+    //return { list: fbList.docs };
   }
 </script>
 
 <script>
+  import { collectionStore } from "../stores/collection";
+
   export let list = [];
 </script>
 
@@ -25,6 +26,7 @@
   </h1>
 
   <h2 class="text-xl text-center">Firestore data</h2>
+  <p>{JSON.stringify($collectionStore)}</p>
   {#each list as listItem}
     <p class="text-center">{JSON.stringify(listItem.data().name)}</p>
   {:else}
