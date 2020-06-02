@@ -11,7 +11,8 @@
     "test": "run-p --race dev cy:run",
     "watch:tailwind": "postcss static/tailwind.css -o static/index.css -w",
     "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
-    "build": "npm run build:tailwind && sapper build --legacy"
+    "build": "npm run build:tailwind && sapper build --legacy",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",

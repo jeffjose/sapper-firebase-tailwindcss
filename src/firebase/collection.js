@@ -41,3 +41,23 @@ export const collectionListener = (firebaseApp) => {
       localStorage.setItem("privilagedlist", data);
     });
 };
+
+export const addItemToCollection = (firebaseApp) => (collectionName) => {
+  firebaseApp.subscribe(async (app) => {
+    let user = app.auth().currentUser;
+    let string = `${collectionName} item ${(Math.random() * 101) | 0}`;
+    let collection = app.firestore().collection(collectionName);
+    if (collectionName == "privilagedlist") {
+      user &&
+        collection.add({
+          name: string,
+          user: user.uid,
+        });
+    } else {
+      collection.add({
+        name: string,
+        user: (user == null ? undefined : user.uid) || "anon",
+      });
+    }
+  });
+};

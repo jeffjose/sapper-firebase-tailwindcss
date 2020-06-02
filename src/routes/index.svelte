@@ -8,6 +8,7 @@
 
 <script>
   import { publicStore, privilagedStore } from "../stores/collection";
+  import { addItemToCollection } from "../firebase";
 </script>
 
 <style>
@@ -24,6 +25,11 @@
   </h1>
 
   <h2 class="text-xl text-center text-blue-500">Firestore data (Public)</h2>
+  <button
+    on:click={() => addItemToCollection('publiclist')}
+    class="bg-gray-200 hover:bg-gray-300 rounded-lg px-4 mx-1">
+    Add item
+  </button>
   {#each $publicStore as doc}
     <p class="text-center">{JSON.stringify(doc)}</p>
   {:else}
@@ -33,9 +39,15 @@
   <h2 class="mt-5 text-xl text-center text-red-500">
     Firestore data (Privilaged)
   </h2>
+  <button
+    on:click={() => addItemToCollection('privilagedlist')}
+    class="bg-gray-200 hover:bg-gray-300 rounded-lg px-4 mx-1">
+    Add item
+  </button>
   {#each $privilagedStore as doc}
     <p class="text-center">{JSON.stringify(doc)}</p>
   {:else}
     <p class="text-center">Firestore is empty.</p>
   {/each}
+
 </div>
