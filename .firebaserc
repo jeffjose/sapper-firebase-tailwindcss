@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "sapper-sveltefire-tailwindcss"
+  }
+}

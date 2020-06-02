@@ -3,6 +3,7 @@
 - [x] [Sapper](https://sapper.svelte.dev)
 - [x] [Firebase Auth](https://firebase.google.com/docs/auth)
 - [x] [Firestore](https://firebase.google.com/docs/firestore)
+- [x] [Firebase Hosting](https://firebase.google.com/docs/hosting)
 - [x] [Tailwind CSS](https://tailwindcss.com)
 
 ## Getting started
@@ -22,21 +23,7 @@ cat src/firebase/config.js
 ### 3. Setup firebase project
 
 1. **Auth**: Enable Google and/or Facebook login
-2. **Cloud Firestore**: Create 2 collections `publiclist` and `privilagedlist`
-3. Update rules
-
-```javascript
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /publiclist/{documentId} {
-      allow read, write;
-    }
-    match /privilagedlist/{documentId} {
-      allow read, write : if request.auth.uid !=null
-    }
-  }
-}
-```
+2. **Cloud Firestore**: Create 2 collections `publiclist` and `privilagedlist`. Rules are in `firestore.rules`
 
 ### 4. Run the project
 
