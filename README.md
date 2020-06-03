@@ -4,6 +4,7 @@
 - [x] [Firebase Auth](https://firebase.google.com/docs/auth)
 - [x] [Firestore](https://firebase.google.com/docs/firestore)
 - [x] [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [x] [Firebase Functions](https://firebase.google.com/docs/functions)
 - [x] [Tailwind CSS](https://tailwindcss.com)
 
 ## Getting started
