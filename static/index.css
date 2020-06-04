@@ -414,6 +414,8 @@ img {
   height: auto;
 }
 
+/*tailwind start components */
+
 .container {
   width: 100%;
 }
@@ -441,6 +443,8 @@ img {
     max-width: 1280px;
   }
 }
+
+/*tailwind end components */
 
 .bg-gray-200 {
   --bg-opacity: 1;
