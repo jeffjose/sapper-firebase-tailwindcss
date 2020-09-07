@@ -44,3 +44,4 @@ This starter project was inspired by/builds on the following projects
 
 - https://github.com/sveltecasts/009-sapper-firestore (For Firestore setup)
 - https://github.com/drejohnson/sapper-graphql-firebase (For rxjs/rxfire setup)
+- https://github.com/codechips/sapper-with-postcss-and-tailwind (For postcss setup)

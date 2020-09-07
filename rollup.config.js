@@ -6,10 +6,13 @@ import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
+import autoProcess from "svelte-preprocess";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+
+const preprocess = autoProcess({ postcss: true });
 
 const onwarn = (warning, onwarn) =>
   (warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
@@ -30,6 +33,7 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
+        preprocess,
       }),
       resolve({
         browser: true,
@@ -83,6 +87,7 @@ export default {
         generate: "ssr",
         hydratable: true,
         dev,
+        preprocess,
       }),
       resolve({
         dedupe: ["svelte"],
