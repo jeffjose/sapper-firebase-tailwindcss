@@ -1,11 +1,11 @@
 # sapper-firebase-tailwindcss starter template
 
 - [x] [Sapper](https://sapper.svelte.dev)
-- [x] [Firebase Auth](https://firebase.google.com/docs/auth)
-- [x] [Firestore](https://firebase.google.com/docs/firestore)
+- [x] [Firebase Auth](https://firebase.google.com/docs/auth) with [rxfire](https://github.com/firebase/firebase-js-sdk/tree/master/packages/rxfire)
+- [x] [Firestore](https://firebase.google.com/docs/firestore) with [rxfire](https://github.com/firebase/firebase-js-sdk/tree/master/packages/rxfire)
 - [x] [Firebase Hosting](https://firebase.google.com/docs/hosting)
 - [x] [Firebase Functions](https://firebase.google.com/docs/functions)
-- [x] [Tailwind CSS](https://tailwindcss.com)
+- [x] [Tailwind CSS](https://tailwindcss.com) with [PurgeCSS](https://purgecss.com/)
 
 ## Getting started
 
