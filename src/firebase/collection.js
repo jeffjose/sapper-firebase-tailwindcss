@@ -45,7 +45,7 @@ export const collectionListener = (firebaseApp) => {
 export const addItemToCollection = (firebaseApp) => (collectionName) => {
   firebaseApp.subscribe(async (app) => {
     let user = app.auth().currentUser;
-    let string = `${collectionName} item ${(Math.random() * 101) | 0}`;
+    let string = `${collectionName} item (sapper) ${(Math.random() * 101) | 0}`;
     let collection = app.firestore().collection(collectionName);
     if (collectionName == "privilagedlist") {
       user &&
