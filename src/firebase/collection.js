@@ -61,3 +61,24 @@ export const addItemToCollection = (firebaseApp) => (collectionName) => {
     }
   });
 };
+
+export const removeItemFromCollection = (firebaseApp) => (collectionName) => {
+  firebaseApp.subscribe(async (app) => {
+    let user = app.auth().currentUser;
+    let string = `${collectionName} item (sapper) ${(Math.random() * 101) | 0}`;
+    let collection = app.firestore().collection(collectionName);
+
+    if (collectionName == "publiclist" || user) {
+      collection
+        //.orderBy("name")
+        .orderBy(app.firestore.FieldPath.documentId())
+        .limit(1)
+        .get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            doc.ref.delete();
+          });
+        });
+    }
+  });
+};

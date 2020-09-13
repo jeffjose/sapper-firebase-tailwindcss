@@ -19,4 +19,7 @@ export const signOut = _signOut(firebaseApp$);
 import { addItemToCollection as _addItemToCollection } from "./collection";
 export const addItemToCollection = _addItemToCollection(firebaseApp$);
 
+import { removeItemFromCollection as _removeItemFromCollection } from "./collection";
+export const removeItemFromCollection = _removeItemFromCollection(firebaseApp$);
+
 export { firebaseApp$ };
