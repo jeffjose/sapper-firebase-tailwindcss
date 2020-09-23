@@ -1,3 +1,9 @@
+<p>
+  <a href="#">
+    <img alt="A starter template for sapper-firebase-tailwindcss" src="https://raw.github.com/jeffjose/sapper-firebase-tailwindcss/master/banner.png">
+  </a>
+</p>
+
 # sapper-firebase-tailwindcss starter template
 
 - [x] [Sapper](https://sapper.svelte.dev)
